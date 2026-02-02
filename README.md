@@ -10,19 +10,19 @@ Built for speed, clarity, and impact, Stalligence empowers teams to move from da
 
 ✨ Key Features
 
-Cross-Platform Intelligence
+1. Cross-Platform Intelligence: 
 Unified visibility across multiple marketplaces for seamless benchmarking.
 
-Competitor & Price Tracking
+2. Competitor & Price Tracking: 
 Monitor competitor pricing, positioning, and market movements in real time.
 
-On-Shelf Availability Insights
+3. On-Shelf Availability Insights: 
 Identify stock-out risks and availability gaps before they impact sales.
 
-Search & Visibility Analytics
+4. Search & Visibility Analytics: 
 Track product discoverability, rankings, and share of search.
 
-Actionable Dashboards
+5. Actionable Dashboards: 
 Clean, visual insights designed for quick decision-making.
 
 💡 Why Stalligence?
