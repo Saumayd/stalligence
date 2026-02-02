@@ -1,31 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Login | Stalligence</title>
-  <style>
-    body {font-family: Arial; display: flex; justify-content: center; align-items: center; height: 100vh;}
-    .login-box {border: 1px solid #ccc; padding: 20px; border-radius: 6px; box-shadow: 0 0 10px rgba(0,0,0,0.1);}
-  </style>
+<meta charset="UTF-8" />
+<title>Stalligence | Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at top left, #0f1c3f, #050b1e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Floating light blobs */
+body::before, body::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(88,140,255,0.35), transparent 70%);
+  filter: blur(60px);
+}
+body::before { top: -100px; left: -100px; }
+body::after { bottom: -100px; right: -100px; }
+
+.glass-card {
+  position: relative;
+  width: 340px;
+  padding: 35px;
+  border-radius: 20px;
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.12),
+    rgba(255,255,255,0.04)
+  );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow:
+    0 25px 40px rgba(0,0,0,0.4),
+    inset 0 0 15px rgba(255,255,255,0.05);
+}
+
+h2 {
+  text-align: center;
+  color: #dbe6ff;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #9bb0ff;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 14px;
+}
+
+input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #4f7cff, #355bff);
+  box-shadow: 0 10px 25px rgba(79,124,255,0.45);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(79,124,255,0.65);
+}
+
+#error {
+  margin-top: 12px;
+  text-align: center;
+  color: #ff6b6b;
+  display: none;
+  font-size: 13px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+}
+</style>
 </head>
+
 <body>
 
-<div class="login-box">
-  <h2>Login</h2>
-  <input id="user" type="text" placeholder="Username" /><br><br>
-  <input id="pass" type="password" placeholder="Password" /><br><br>
-  <button onclick="login()">Login</button>
-  <p id="err" style="color:red; display:none;">Invalid</p>
+<div class="glass-card">
+  <h2>Stalligence</h2>
+  <div class="subtitle">Intelligence through clarity</div>
+
+  <input id="username" type="text" placeholder="Username" />
+  <input id="password" type="password" placeholder="Password" />
+
+  <button onclick="login()">Sign In</button>
+
+  <div id="error">Invalid credentials</div>
+
+  <div class="footer">Hackathon Demo</div>
 </div>
 
 <script>
 function login() {
-  const u = document.getElementById("user").value;
-  const p = document.getElementById("pass").value;
-  // demo credentials
+  const u = document.getElementById("username").value;
+  const p = document.getElementById("password").value;
+
   if (u === "admin" && p === "demo123") {
-    window.location = "index.html";
+    window.location.href = "index.html"; // dashboard
   } else {
-    document.getElementById("err").style.display = "block";
+    document.getElementById("error").style.display = "block";
   }
 }
 </script>
